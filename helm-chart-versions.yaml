@@ -8,6 +8,7 @@ charts:
   cert-manager: v1.19.2
   cinder: 2025.1.13+4d4d4e25c
   cloudkitty: 2025.1.2+ebb1488dc
+  cyborg: 2025.2.6+8fa7e4be3
   designate: 2025.2.6+f3906fe15
   envoyproxy-gateway: v1.7.0
   freezer: 2025.2.0+18607738c
