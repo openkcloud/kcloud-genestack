@@ -220,6 +220,7 @@ nav:
                       - Ceilometer: openstack-ceilometer.md
                       - Cloudkitty: openstack-cloudkitty.md
                   - Blazar: openstack-blazar.md
+                  - Cyborg: openstack-cyborg.md
                   - DNSaaS:
                       - Designate Prep: openstack-designate-prep.md
                       - Deployment: openstack-designate.md
