@@ -10,8 +10,11 @@ SERVICE_NAME_DEFAULT="cyborg"
 SERVICE_NAMESPACE="openstack"
 
 # Helm
-HELM_REPO_NAME_DEFAULT="openstack-helm"
-HELM_REPO_URL_DEFAULT="https://tarballs.opendev.org/openstack/openstack-helm"
+# cyborg는 upstream openstack-helm chart에 버그가 있어 openkcloud fork chart를
+# 쓴다. fork chart는 helm-toolkit을 번들한 self-contained OCI 아티팩트로
+# GHCR(ghcr.io/openkcloud/kcloud-openstack-helm/cyborg)에 발행돼 있다.
+HELM_REPO_NAME_DEFAULT="kcloud-openstack-helm"
+HELM_REPO_URL_DEFAULT="oci://ghcr.io/openkcloud"
 
 # Base directories provided by the environment
 GENESTACK_BASE_DIR="${GENESTACK_BASE_DIR:-/opt/genestack}"

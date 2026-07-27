@@ -1,10 +1,10 @@
 ---
 images:
   tags:
-    cyborg_api: "ghcr.io/rackerlabs/genestack-images/cyborg:2025.1-latest"
-    cyborg_conductor: "ghcr.io/rackerlabs/genestack-images/cyborg:2025.1-latest"
-    cyborg_agent: "ghcr.io/rackerlabs/genestack-images/cyborg:2025.1-latest"
-    cyborg_db_sync: "ghcr.io/rackerlabs/genestack-images/cyborg:2025.1-latest"
+    cyborg_api: "ghcr.io/openkcloud/kcloud-cyborg:stable-2024.1"
+    cyborg_conductor: "ghcr.io/openkcloud/kcloud-cyborg:stable-2024.1"
+    cyborg_agent: "ghcr.io/openkcloud/kcloud-cyborg:stable-2024.1"
+    cyborg_db_sync: "ghcr.io/openkcloud/kcloud-cyborg:stable-2024.1"
     bootstrap: "ghcr.io/rackerlabs/genestack-images/openstack-client:latest"
     db_drop: "ghcr.io/rackerlabs/genestack-images/openstack-client:latest"
     db_init: "ghcr.io/rackerlabs/genestack-images/openstack-client:latest"
