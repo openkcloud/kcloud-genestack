@@ -131,6 +131,11 @@ set_args=(
     --set "endpoints.identity.auth.admin.password=$(kubectl --namespace openstack get secret keystone-admin -o jsonpath='{.data.password}' | base64 -d)"
     --set "endpoints.identity.auth.cyborg.password=$(kubectl --namespace openstack get secret cyborg-admin -o jsonpath='{.data.password}' | base64 -d)"
     --set "endpoints.identity.auth.test.password=$(kubectl --namespace openstack get secret cyborg-keystone-test-password -o jsonpath='{.data.password}' | base64 -d)"
+    # cyborg conductor는 placement/nova의 client라 그 서비스 유저로 아웃바운드 인증한다.
+    # 이 값이 없으면 chart 기본값(placeholder)이 들어가 conductor가 keystone 401로 crash한다.
+    # (install-nova.sh 도 동일하게 placement 등 client 서비스 유저 패스워드를 넘긴다.)
+    --set "endpoints.identity.auth.placement.password=$(kubectl --namespace openstack get secret placement-admin -o jsonpath='{.data.password}' | base64 -d)"
+    --set "endpoints.identity.auth.nova.password=$(kubectl --namespace openstack get secret nova-admin -o jsonpath='{.data.password}' | base64 -d)"
     --set "endpoints.oslo_db.auth.admin.password=$(kubectl --namespace openstack get secret mariadb -o jsonpath='{.data.root-password}' | base64 -d)"
     --set "endpoints.oslo_db.auth.cyborg.password=$(kubectl --namespace openstack get secret cyborg-db-password -o jsonpath='{.data.password}' | base64 -d)"
     --set "endpoints.oslo_messaging.auth.admin.password=$(kubectl --namespace openstack get secret rabbitmq-default-user -o jsonpath='{.data.password}' | base64 -d)"
