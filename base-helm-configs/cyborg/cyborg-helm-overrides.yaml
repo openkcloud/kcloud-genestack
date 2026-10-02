@@ -15,11 +15,15 @@ images:
 
 endpoints:
   accelerator:
+    hosts:
+      admin: cyborg-api
+      public: cyborg-api
     port:
       api:
         default: 6666
+        admin: 6666
         internal: 6666
-        public: 80
+        public: 6666
         service: 6666
   identity:
     port:
